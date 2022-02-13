@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/utils/colors.dart';
+import 'package:food_delivery/widgets/big_text.dart';
 
 class MainFoodPage extends StatefulWidget {
   MainFoodPage({Key? key}) : super(key: key);
@@ -12,30 +14,39 @@ class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: Column(
+        children: [
+          Container(
       child: Container(
+        margin: EdgeInsets.only(top: 45 , bottom: 15),
+        padding: EdgeInsets.only(left: 20,right: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               children: [
-                Text("Country"),
+                BigText(text: "Turkey", color: AppColors.mainColor,),
                 Text("City")
               ],
             ),
-            Container(
-              width: 45,
-              height: 45,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.blue,
-                
+            Center(
+              child: Container(
+                width: 45,
+                height: 45,
+                child: Icon(Icons.search, color: Colors.white,),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: AppColors.mainColor,
+                  
+                ),
               ),
             )
           ],
         ),
       ),
     ),
+        ],
+      )
     );
   }
 }
