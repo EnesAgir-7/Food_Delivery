@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/home/food_page_body.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/widgets/big_text.dart';
+import 'package:food_delivery/widgets/small_text.dart';
 
 class MainFoodPage extends StatefulWidget {
   MainFoodPage({Key? key}) : super(key: key);
@@ -26,7 +28,12 @@ class _MainFoodPageState extends State<MainFoodPage> {
             Column(
               children: [
                 BigText(text: "Turkey", color: AppColors.mainColor,),
-                Text("City")
+                Row(
+                  children: [
+                    SmallText(text: "Gaziantep", color: Colors.black54,),
+                    Icon(Icons.arrow_drop_down_rounded)
+                  ],
+                )
               ],
             ),
             Center(
@@ -45,6 +52,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
         ),
       ),
     ),
+        FoodPageBody(),
         ],
       )
     );
